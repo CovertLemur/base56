@@ -15,13 +15,13 @@ l (LOWERCASE EL)
 
 ## Usage:
 
-```
+```bash
 bash b56.sh <#> 
 ```
 
 Example:
 
-```
+```bash
 bash b56.sh 12
 xbBTpAb5MMF7
 ```
