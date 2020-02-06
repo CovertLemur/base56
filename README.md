@@ -1,4 +1,4 @@
-# Bash script that will generate a random base56 string.
+# Bash script to generate unambiguous random base56 string
 
 ## Why would I need this?
 
