@@ -1,29 +1,14 @@
-import sys
 import random
 import string
+import argparse
 
-def help_menu():
-    help_message = 'python3 b56.py [Length of String to Output]'
-    print("Usage:")
-    print("-" * len(help_message))
-    print(help_message)
+def args(): 
+    parser = argparse.ArgumentParser(description='Script to make an unambiguous string.')
+    parser.add_argument('-l', metavar='#', type=int, help='The length of the string to be generated.', dest='int_mode')
+    args = parser.parse_args()
+    return args
 
-def check_input():
-    help_arguments = ['-h', '--help']
-    if sys.argv[1] in help_arguments:
-        help_menu()
-        exit(1)
-    else:
-        try:
-            sys.argv[1] = int(sys.argv[1])
-            return sys.argv[1]
-        except ValueError:
-            print("Input was not valid.\n")
-            help_menu()
-            exit(0)
-
-def random_string():
-    string_length = check_input()
+def random_string(string_length):
     all_characters = string.ascii_letters + string.digits
     ignored_characters = '0OoIl1'
     output = ''
@@ -32,8 +17,7 @@ def random_string():
     print(output)
 
 def run():
-    check_input()
-    random_string()
+    random_string(args().int_mode)
 
 if __name__ == "__main__": 
     run()
